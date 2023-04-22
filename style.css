@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+:root {
+  --color-primary: hsl(223, 87%, 63%);
+  --color-secondary-blue: hsl(223, 100%, 88%);
+  --color-secondary-red: hsl(354, 100%, 66%);
+  --color-neutral-gray: hsl(0, 0%, 59%);
+  --color-neutral-blue: hsl(209, 33%, 12%);
+  --fw-300: 300;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
+/*========= CSS Base ========*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+input, button {
+  font: inherit;
+}
+
+small, h1, h2 {
+  overflow-wrap: break-word;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  padding-top: 5rem;
+}
+
+/*========= Typography ========*/
+a#logo {
+  color: var(--color-neutral-blue);
+  font-size: clamp(1.25rem, 0.25rem + 4vw, 2rem);
+  font-weight: var(--fw-700);
+}
+
+a#logo span {
+  color: var(--color-primary);
+}
+
+h1 {
+  color: var(--color-neutral-gray);
+  font-size: clamp(1.375rem, 0.25rem + 4vw, 3rem);
+  font-weight: var(--fw-300);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+h1 span {
+  font-weight: var(--fw-700);
+  color: var(--color-neutral-blue);
+}
+
+h2 {
+  color: var(--color-neutral-blue);
+  font-size: clamp(0.75rem, 0.25rem + 2vw, 1.25rem);
+  font-weight: var(--fw-300);
+  margin-bottom: clamp(2rem, 0.25rem + 4vw, 2.5rem);
+}
+
+small {
+  color: var(--color-neutral-gray);
+  font-size: clamp(0.625rem, 0.05rem + 2vw, 0.75rem);
+  font-weight: var(--fw-300);
+}
+
+i {
+  color: var(--color-primary);
+}
+
+footer a {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0.92px solid var(--color-secondary-blue);
+  align-items: center;
+  justify-content: center;
+}
+
+footer a:hover,
+footer a:focus {
+  background-color: var(--color-primary);
+  outline: none;
+}
+
+footer a:hover i,
+footer a:focus i {
+  color: #fff;
+}
+
+/*========= CSS Components ========*/
+.invalid-feedback {
+  display: none;
+  font-weight: var(--fw-300);
+  font-size: 12px;
+  color: var(--color-secondary-red);
+  font-style: italic;
+  text-align: start;
+  margin-top: 0.375rem;
+  margin-left: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+input {
+  border: 1px solid var(--color-secondary-blue);
+  padding: 18px 30px;
+  box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.0001);
+  border-radius: 28px;
+  width: 100%;
+  font-size: clamp(0.75rem, 0.05rem + 2vw, 1rem);
+}
+
+input.invalid {
+  border-color: var(--color-secondary-red);
+}
+
+input::placeholder {
+  font-weight: var(--fw-300);
+  line-height: 20px;
+  color: var(--color-secondary-blue);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  padding: 18px 62px;
+  color: #fff;
+  font-size: clamp(0.75rem, 0.05rem + 2vw, 1rem);
+  font-weight: var(--fw-600);
+  background-color: var(--color-primary);
+  box-shadow: 0px 5px 10px 2px rgba(76, 123, 243, 0.230414);
+  border-radius: 28px;
+}
+
+button:hover,
+button:focus {
+  outline: none;
+  opacity: 0.8;
+}
+
+/*========= CSS Layout ========*/
+article {
+  width: min(100vw - 3.5rem, 640px);
+  padding-block: 2.5rem;
+}
+
+form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 48px;
+  align-items: start;
+}
+
+form div:first-child {
+  flex-grow: 1;
+}
+
+footer {
+  padding: 2rem;
+}
+
+footer div {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 72px;
+  margin-bottom: 20px;
+}
+
+/*========= CSS Media queries ========*/
+@media (max-width: 800px) {
+  form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .invalid-feedback {
+    justify-content: center;
+    margin-inline: 0;
+  }
+
+}
